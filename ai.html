@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Links Page with Clock</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: #333;
+        margin: 0;
+      }
+      #clock {
+        font-size: 18px;
+        color: #555;
+        font-weight: bold;
+        font-family: "Courier New", Courier, monospace;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      li {
+        margin: 10px 0;
+      }
+      a {
+        text-decoration: none;
+        color: #1a0dab;
+        font-size: 18px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Useful Links</h1>
+      <div id="clock"></div>
+    </header>
+    <ul>
+      <li>
+        <a href="https://www.google.com" target="_blank" rel="noopener"
+          >Google</a
+        >
+      </li>
+      <li>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener"
+          >Facebook</a
+        >
+      </li>
+      <li>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener"
+          >Twitter</a
+        >
+      </li>
+      <li>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+      </li>
+    </ul>
+
+    <script>
+      function updateClock() {
+        const clock = document.getElementById("clock");
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const seconds = now.getSeconds().toString().padStart(2, "0");
+        clock.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Update clock every second
+      setInterval(updateClock, 1000);
+      updateClock(); // Initial call to display clock right away
+    </script>
+  </body>
+</html>    <script>
+      function updateClock() {
+        const clock = document.getElementById("clock");
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const seconds = now.getSeconds().toString().padStart(2, "0");
+        clock.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Update clock every second
+      setInterval(updateClock, 1000);
+      updateClock(); // Initial call to display clock right away
+    </script>
+  </body>
+</html>

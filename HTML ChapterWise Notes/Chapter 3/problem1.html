@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Website</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #e23744;
+            /* Zomato red */
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header div:first-child {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation links */
+        header div:nth-child(2) {
+            margin-bottom: 15px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        header a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
+        header a:hover {
+            color: #ffd1d6;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        /* Food list paragraph */
+        header p {
+            max-width: 800px;
+            font-size: 0.95rem;
+            color: #ffe6e9;
+        }
+
+        /* Main content */
+        main {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        main div {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        footer:hover {
+            color: #fff;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+            }
+
+            header div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            header a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>Zomato</div>
+        <div>
+            <a href="/home">home</a>
+            <a href="/about">about</a>
+            <a href="/contact">contact</a>
+        </div>
+        <p>
+            Chicken curry, mutton biryani, dal, paneer butter masala, chole, roti, naan, rice,
+            samosa, pakora, pani puri, fish curry, prawn masala, dosa, idli, sambar, gulab jamun,
+            jalebi, kheer.
+        </p>
+    </header>
+    <main>
+        <div>
+            Order food anytime and anywhere
+        </div>
+    </main>
+    <footer>
+        Copyright Zomato All Right Reserved
+    </footer>
+
+</body>
+
+</html>

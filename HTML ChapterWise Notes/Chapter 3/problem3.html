@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite five websites</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Header styling */
+        header {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        /* Link styling */
+        a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Hover effect */
+        a:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* Different colors for each link */
+        a[href*="google"] { background-color: #4285F4; }
+        a[href*="linkedin"] { background-color: #0077B5; }
+        a[href*="youtube"] { background-color: #FF0000; }
+        a[href*="github"] { background-color: #24292F; }
+        a[href*="monkeytype"] { background-color: #F9A825; }
+
+        /* Hover color adjustments */
+        a[href*="google"]:hover { background-color: #3367D6; }
+        a[href*="linkedin"]:hover { background-color: #005983; }
+        a[href*="youtube"]:hover { background-color: #CC0000; }
+        a[href*="github"]:hover { background-color: #000; }
+        a[href*="monkeytype"]:hover { background-color: #D68C00; }
+
+        /* Highlighted button */
+        .highlight {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Click counter */
+        #clickCount {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>These are the most common five websites that you scroll</header> <br>
+
+    <a href="https://www.google.com" target="_blank" title="Search the web">Google</a> <br>
+    <a href="https://www.linkedin.com" target="_blank" title="Professional networking">Linkedin</a> <br>
+    <a href="https://www.youtube.com" target="_blank" title="Watch and share videos">Youtube</a> <br>
+    <a href="https://www.github.com" target="_blank" title="Code hosting and collaboration">Github</a> <br>
+    <a href="https://www.monkeytype.com" target="_blank" title="Improve your typing speed">Monkeytype</a> <br>
+
+    <div id="clickCount">Links clicked: 0</div>
+
+    <script>
+        // Click counter
+        let clickCount = 0;
+        const counterDisplay = document.getElementById("clickCount");
+        const links = document.querySelectorAll("a");
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                clickCount++;
+                counterDisplay.textContent = `Links clicked: ${clickCount}`;
+            });
+        });
+
+        // Randomly highlight one link on page load
+        const randomIndex = Math.floor(Math.random() * links.length);
+        links[randomIndex].classList.add("highlight");
+
+        // Tooltip effect (optional, browsers already show title)
+        links.forEach(link => {
+            link.addEventListener("mouseover", () => {
+                counterDisplay.textContent = `You are hovering over: ${link.textContent}`;
+            });
+            link.addEventListener("mouseout", () => {
+                counterDisplay.textContent = `Links clicked: ${clickCount}`;
+            });
+        });
+    </script>
+</body>
+</html>

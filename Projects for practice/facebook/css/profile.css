@@ -1,0 +1,260 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 70px; /* Added space for header */
+}
+
+.clear {
+    clear: both;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 97vw;
+    background-color: #4267B2;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo input {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.header .nav a {
+    margin: 0 15px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+}
+
+.header .nav a:hover {
+    color: #d1e1f3;
+}
+
+.header .profile-actions {
+    display: flex;
+    align-items: center;
+}
+
+.header .profile-actions img {
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.header .profile-actions img:hover {
+    transform: scale(1.1);
+}
+
+.header .icon-link {
+    margin: 0 10px;
+    color: white;
+}
+
+/* Profile Header */
+.profile-header {
+    position: relative;
+    width: 100%;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 300px;
+    background: url('https://www.telegraph.co.uk/content/dam/tv/2016/05/31/asi_eran_y_asi_son_matt_leblanc_y_matthew_perry_joey_y_chandler_de_friends._5_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gqsW2GA9nAM4IFtGNFTInME.jpg?imwidth=680') no-repeat center center;
+    background-size: cover;
+}
+
+.profile-picture {
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background: url('https://professionalmoron.com/wp-content/uploads/2018/02/joey-tribbiani.jpg?w=703&h=451') no-repeat center center;
+    background-size: cover;
+}
+
+.profile-info {
+    margin-left: 200px;
+    padding: 40px 0;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: gray;
+}
+
+.action-buttons {
+    float: right;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    padding: 10px 15px;
+    background-color: #1877F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Left Column */
+.left-column {
+    float: left;
+    width: 30%;
+}
+
+.intro-section,
+.photos-section {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.photos-section h3 {
+    margin-top: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.photo-grid img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Right Column */
+.right-column {
+    float: right;
+    width: 65%;
+}
+
+/* What's on your mind? */
+.status-box {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.status-input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.status-actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-actions span {
+    margin-right: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.status-actions span i {
+    margin-right: 5px;
+}
+
+/* Post Box */
+.post-box {
+    background-color: white;
+    padding: 20px; /* Increased padding for better spacing */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    transition: box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.post-box:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.post-header {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space below header */
+}
+
+.post-user-logo {
+    border-radius: 50%; /* Makes the logo circular */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.post-user-info h4 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+.post-user-info p {
+    margin: 0; /* Remove default margin */
+    color: gray; /* Change time text color */
+    font-size: 0.9em; /* Slightly smaller font size */
+}
+
+.post-text {
+    margin: 10px 0; /* Space above and below text */
+    font-size: 1em; /* Base font size */
+}
+
+.post-image {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    margin: 10px 0; /* Space above and below image */
+}
+
+.post-actions {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-around; /* Align items to the left */
+}
+
+.post-actions span {
+    color: gray;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.post-actions span:hover {
+    color: black; /* Change color on hover */
+}

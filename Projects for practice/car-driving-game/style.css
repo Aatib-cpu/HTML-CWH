@@ -1,0 +1,117 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    border: 3px solid #fff;
+}
+
+/* Default car appearance */
+.car {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    background-image: url('/assets/player.png'); /* Normal car image */
+    background-size: cover;
+    transition: transform 0.2s; /* Smooth transition for animations */
+}
+
+/* Add a crash effect by swapping to a damaged car image */
+.car.crash {
+    background-image: url('/assets/damagedcar.png'); /* Change to a crashed car image */
+}
+
+/* Optional: Add a shake animation to simulate the crash impact */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Apply shake animation to the car on crash */
+.car.crash {
+    animation: shake 0.5s;
+    animation-iteration-count: 1; /* Shake once */
+}
+
+/* Replace obstacle boxes with car images */
+.obstacle {
+    position: absolute;
+    top: -100px; /* Start off-screen */
+    width: 50px;
+    height: 100px;
+    background-image: url('/assets/enemycar.png'); /* Use an image for enemy cars */
+    background-size: cover;
+}
+
+@keyframes moveRoad {
+    0% {
+        background-position-y: 100%;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+.road {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/road.png') repeat-y;
+    background-size: cover;
+    animation: moveRoad 2s linear infinite; /* Smoother with 2s duration */
+    will-change: background-position; /* Optimize performance by hinting at animation */
+}
+
+
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

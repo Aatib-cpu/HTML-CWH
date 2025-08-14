@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML</title>
+    <style>
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Removes the gap between borders */
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+
+        /* Table header */
+        th {
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            padding: 10px;
+        }
+
+        /* Table cells */
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            /* Light grey border */
+        }
+
+        /* Row hover effect */
+        tr:hover {
+            background-color: #f1f1f1;
+            /* Light grey on hover */
+        }
+
+        /* Alternate row coloring */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tables in HTML</h1>
+    <table>
+        <caption>Student Report</caption>
+        <thead>
+            <tr>
+                <th><b> Name </b></th>
+                <th><b> Role No </b></th>
+                <th><b> Marks </b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aatib</td>
+                <td>1</td>
+                <td>68</td>
+            </tr>
+            <tr>
+                <td>Ariz</td>
+                <td>2</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>Saharoz</td>
+                <td>3</td>
+                <td>87</td>
+            </tr>
+            <tr>
+                <td>Levi</td>
+                <td>4</td>
+                <td>75</td>
+            </tr>
+<tr><td colspan="3"> Great </td></tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
